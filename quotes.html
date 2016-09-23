@@ -17,7 +17,24 @@
   <main-nav></main-nav>
   <div class='container' ng-controller='QuotesCtrl'>
     <quote-form></quote-form>
-    {{quotes}}
+    <p ng-hide="quotes.length">
+      no quotes listed
+    </p>
+    <table ng-show="quotes.length">
+      <thead>
+        <td>
+          Author
+        </td>
+        <td>
+          Quote
+        </td>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key,value) as quote in quotes" quote-row quote="quote">
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 
 
