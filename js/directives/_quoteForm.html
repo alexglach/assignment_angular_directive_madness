@@ -1,7 +1,13 @@
 <form name='newQuote' ng-submit="processForm(newQuote)">
   <label for='author'>Author: </label>
-  <input type='text' name='author' ng-model="formData.author"><br />
+  <input type='text' name='author' ng-model="formData.author" ng-minlength="2" ng-maxlength="32">
+  <p ng-show="newQuote.author.$invalid">
+    The author name is be between 2 and 32 characters
+  </p><br />
   <label for='quote'>Quote: </label>
-  <input type='text' name='quote' ng-model="formData.quote"> <br />
+  <input type='text' name='quote' ng-model="formData.quote" ng-minlength="2" ng-maxlength="32">
+  <p ng-show="newQuote.quote.$invalid">
+    The quote name is be between 2 and 32 characters
+  </p> <br />
   <input type='submit' value="Submit Quote">
 </form>

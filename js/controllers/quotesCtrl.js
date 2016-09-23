@@ -2,18 +2,18 @@ app.controller('QuotesCtrl',
   ['$scope', function($scope){
     $scope.formData = {};
     $scope.quotes = [];
-    $scope.bar = 
+    $scope.bar =
 
-    $scope.processForm = function(newForm){
-      $scope.formData.id = $scope.idCounter;
-
-      // $scope.quotes.push($scope.formData);
-      $scope.quotes.push($scope.formData);
-      $scope.formData = {};
+    $scope.processForm = function(formS){
+      if(formS.$valid){
+        $scope.quotes.push($scope.formData);
+        $scope.formData = {};
+        formS.$setPristine();
+      }
     };
 
     $scope.deleteQuote = function(quote){
-      console.log(quote)
+      console.log(quote);
       $scope.quotes.splice($scope.quotes.indexOf(quote), 1);
     };
   }]

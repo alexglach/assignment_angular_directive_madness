@@ -7,3 +7,16 @@ copyright {
   height: 50px;
   width: 100px;
 }
+
+input.ng-invalid {
+   border: 1px solid #F00;
+}
+
+input.ng-valid {
+  border: 1px solid green;
+}
+
+input.ng-untouched,
+input.ng-pristine {
+  border: 1px solid gray;
+}
