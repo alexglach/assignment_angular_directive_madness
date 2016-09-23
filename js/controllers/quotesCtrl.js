@@ -1,21 +1,20 @@
 app.controller('QuotesCtrl',
   ['$scope', function($scope){
     $scope.formData = {};
-    $scope.quotes = {};
-    $scope.idCounter = 0;
+    $scope.quotes = [];
+    $scope.bar = 
 
     $scope.processForm = function(newForm){
       $scope.formData.id = $scope.idCounter;
 
       // $scope.quotes.push($scope.formData);
-      $scope.quotes[idCounter] = $scope.formData;
-      $scope.idCounter++;
+      $scope.quotes.push($scope.formData);
       $scope.formData = {};
     };
 
     $scope.deleteQuote = function(quote){
-      
-
+      console.log(quote)
+      $scope.quotes.splice($scope.quotes.indexOf(quote), 1);
     };
   }]
 );
@@ -39,7 +38,8 @@ app.directive('quoteRow', [function(){
       templateUrl: 'js/directives/_quote.html',
       restrict: 'A',
       scope: {
-        quote: "="
+        quote: "=",
+        delete: "&"
       }
     };
   }]

@@ -30,7 +30,7 @@
         </td>
       </thead>
       <tbody>
-        <tr ng-repeat="(key,value) as quote in quotes" quote-row quote="quote">
+        <tr ng-repeat="quote in quotes" quote-row quote="quote" delete="deleteQuote(foo)">
         </tr>
       </tbody>
     </table>
