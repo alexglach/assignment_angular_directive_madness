@@ -1,9 +1,24 @@
 <td>
-  {{quote.author}}
+  <div ng-hide="quote.editing">
+    {{quote.author}}
+  </div>
+  <div ng-show="quote.editing">
+    <input ng-minlength="2" ng-maxlength="32" ng-model="quote.tempAuthor" type="text" />
+  </div>
 </td>
 <td>
-  {{quote.quote}}
+  <div ng-hide="quote.editing">
+    {{quote.quote}}
+  </div>
+  <div ng-show="quote.editing">
+    <input ng-minlength="2" ng-maxlength="32" ng-model="quote.tempQuote" type="text" />
+  </div>
 </td>
 <td ng-click="delete({foo: quote})">
   X
+</td>
+<td>
+  <button ng-hide="quote.editing" ng-click="edit({quote: quote})">Edit</button>
+  <button ng-show="quote.editing" ng-click="cancel({quote: quote})">Cancel</button>
+  <button ng-show="quote.editing" ng-click="edit({quote: quote})">Update</button>
 </td>
