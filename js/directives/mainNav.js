@@ -11,8 +11,6 @@ app.directive("copyright", [function(){
     var text = element.children().first().text();
     text += " " + new Date().getFullYear();
     element.children().first().text(text);
-    element.css('height', '50px');
-    element.css('width', '100px')
   }
 
   return {
@@ -29,10 +27,10 @@ app.directive("colorize", [function(){
   function linkCB(scope, element, attributes) {
     if (attributes.originalEl) {
       element.children().first().css('background-color', scope.background);
-      element.children().first().css('color', scope.color)
+      element.children().first().css('color', scope.color);
     } else {
       element.css('background-color', scope.background);
-      element.css('color', scope.color)
+      element.css('color', scope.color);
     }
   }
 
@@ -43,8 +41,60 @@ app.directive("colorize", [function(){
       color: "@",
       background: "@"
     }
+  };
+}]);
+
+app.directive("mouseBtn", [function(){
+  function popDom(scope, element, attributes){
+    $(document).mouseup(function(e){
+      element.text("Mouse Button is: 'UP'");
+    });
+
+    $(document).mousedown(function(e){
+      element.text("Mouse Button is: 'Down'");
+    });
   }
 
+  return {
+    restrict: "E",
+    link: popDom
+  };
 
+}]);
+
+app.directive("mouseOver", [function(){
+  function popDom(scope, element, attributes){
+    $(element).mouseover(function(e){
+      element.text('Hover state: "OVER"');
+    });
+
+    $(element).mouseleave(function(e){
+      element.text('Hover state: "LEAVE"');
+    });
+  }
+
+  return {
+    restrict: "E",
+    link: popDom
+  };
+
+}]);
+
+app.directive("btnFreakinTime", [function(){
+  function popDom(scope, element, attributes){
+    $(element).dblclick(function(e){
+      element.children().first().text("I'm totally double clickable");
+    });
+
+    $(element).click(function(e){
+      element.children().first().text("I'm totally single clickable");
+    });
+  }
+
+  return {
+    template: "<button>OH YEAHHH</button>",
+    restrict: "E",
+    link: popDom
+  };
 
 }]);
