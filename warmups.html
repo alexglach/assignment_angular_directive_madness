@@ -13,28 +13,11 @@
 </head>
 <body>
   <main-nav></main-nav>
-  <div class="container">
 
-    <main-header>First title</main-header>
 
-    <p ng-if="!inputName">No number selected</p>
-    <p ng-show="(inputName) % 2 === 0">Selected number is even</p>
-    <p ng-show="(inputName) % 2 === 1">Selected number is odd</p>
-    <p ng-show="inputName">Selected number {{inputName}}</p>
-
-    <form>
-      <input type="radio" name="name" value="1" ng-model="inputName" />
-      <input type="radio" name="name" value="2" ng-model="inputName" />
-      <input type="radio" name="name" value="3" ng-model="inputName" />
-      <input type="radio" name="name" value="4" ng-model="inputName" />
-      <input type="radio" name="name" value="5" ng-model="inputName" />
-    </form>
-  </div>
-
-  <copyright>Big Company</copyright>
 
   <script src="js/app.js"></script><!-- App.js -->
-  <script src="js/directives/mainNav.js"></script><!-- Nav directive -->
-  <script src="js/directives/mainHeader.js"></script><!-- Header directive -->
+  <script src="js/directives/mainNav.js"></script><!-- App.js -->
+  <script src="js/directives/mainHeader.js"></script><!-- App.js -->
 </body>
 </html>
