@@ -1,0 +1,40 @@
+<html ng-app="DirectiveMadness">
+<head>
+  <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <script src="https://cdn.jsdelivr.net/lodash/4.16.1/lodash.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+   <title>Quotes</title>
+</head>
+<body ng-controller="ScopesCtrl">
+  <main-nav></main-nav>
+
+  <label for="oneWay">OneWay</label>
+  <input type="text" ng-model="oneWay">
+  <label for="twoWay">TwoWay</label>
+  <input type="text" ng-model="twoWay">
+  <p>Oneway: {{oneWay}}</p>
+  <p>TwoWay: {{twoWay}}</p>
+
+  <h2>Inside Isolate</h2>
+  <isolated one-way="{{oneWay}}" two-way="twoWay" say-hello="sayHello(name)"></isolated>
+
+ 
+
+
+  <copyright original-el="true"  >Big Company</copyright>
+
+  <script src="js/app.js"></script><!-- App.js -->
+  <script src="js/directives/mainNav.js"></script><!-- App.js -->
+  <script src="js/directives/mainHeader.js"></script><!-- App.js -->
+  <script src="js/controllers/quotesCtrl.js"></script><!--quotesCtrl.js-->
+  <script src="js/controllers/scopesCtrl.js"></script>
+</body>
+</html>
