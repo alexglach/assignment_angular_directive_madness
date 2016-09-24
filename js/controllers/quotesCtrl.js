@@ -5,7 +5,6 @@ app.controller('QuotesCtrl',
 
     $scope.processForm = function(formS){
       if(formS.$valid){
-        console.log(formS.$valid);
         $scope.formData.editing = false;
         $scope.quotes.push($scope.formData);
         $scope.formData = {};
